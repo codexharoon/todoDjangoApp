@@ -1,0 +1,59 @@
+body{
+    background: rgba(70, 70, 213, 0.658);
+}
+
+.head{
+    background-color: #fefefe;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    box-shadow: 1px 1px 5px rgb(49, 47, 47);
+}
+.todo{
+    display: inline-block;
+}
+.todo a{
+    text-decoration: none;
+    color: rgba(70, 70, 213);
+}
+
+.logout{
+    display: inline-block;
+}
+
+
+.Button{
+    margin-left: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+
+    color: rgba(70, 70, 213);
+    background-color: white;
+    border-radius: 30px;
+    border-color: rgba(70, 70, 213);
+    border-width: 1px;
+
+    transition: background-color 0.15s;
+
+    text-decoration: none;
+}
+
+.Button:hover{
+    color: white;
+    background-color: rgba(70, 70, 213);
+    cursor: pointer;
+}
+
+
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

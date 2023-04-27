@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo - Signup</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    
+    <div class="main">
+        
+        <div class="center">
+
+            {% for m in messages %}
+            <p>{{m}}</p>
+            {% endfor %}
+            
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                <p>Signup</p>
+
+                <div style="color:white">
+                    <label for="name">Full Name</label><br>
+                    <input type="text" name="name" id="name" required>
+                </div>
+
+                <div style="color:white">
+                    <label for="username">Username</label><br>
+                    <input type="text" name="username" id="username" required>
+                </div>
+
+                <div style="color:white">
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <div style="color:white">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <div style="color:white">
+                    <label for="repeatpassword">Repeat Password</label><br>
+                    <input type="password" name="repeatpassword" id="repeatpassword" required>
+                </div>
+
+                <div>
+                    <input type="submit" value="SignUp">
+                </div>
+
+                <div>
+                    <p>Have an account click <a href="/" style="color:white">here</a> to Login</p>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

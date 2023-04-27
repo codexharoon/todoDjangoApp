@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/todoapp.css' %}">
+</head>
+<body>
+
+    <header>
+
+        <div class="head">
+            <div class="todo">
+                <a href="todo">Todo App</a>
+            </div>
+
+            <div class="logout">
+                <form action="logout" method="POST">
+                    {% csrf_token %}
+                    <button class="Button" type="submit">Logout</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+
+    <h1>Welcome {{username}}</h1>
+
+    <div class="main">
+
+        <div class="center">
+
+            <div class="create">
+                <form action="todo" method="POST">
+                    {% csrf_token %}
+
+                    <p style="color: white; display: inline-block;">Todo Task</p>
+                    <p style="display: inline-block;">{{form.title}}</p>
+                    <button class="Button" type="submit">Create</button>
+                </form>
+            </div>
+
+                <h3 style="color: white;">All Tasks</h3>
+                {% for task in todolist %}
+                <div class="task">
+                   
+                    <div class="data">
+                        {% if task.complete != True %}
+                        <p>{{task.title}}</p>
+
+                        {% else %}
+                        <strike>{{task.title}}</strike>
+                        {% endif %}
+
+                        <p>{{task.datetime}}</p>
+                        <a href="{% url 'edit' task.id %}" class="Button">Edit</a>
+                        <a href="{% url 'delete' task.id %}" class="Button">Delete</a>
+                    </div>
+
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
